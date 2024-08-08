@@ -1,0 +1,19 @@
+---
+import Layout from '../layouts/Layout.astro';
+---
+
+<Layout
+	title="About Me"
+	description="Lorem ipsum dolor sit amet"
+  path='/about'
+  pagefind={true}
+  og={{
+    enabled: true,
+    image: new URL('https://example.com/image.jpg'),
+    width: 1200,
+    height: 630,
+    type: 'article'
+  }}
+>
+  <h1>hello</h1>
+</Layout>
