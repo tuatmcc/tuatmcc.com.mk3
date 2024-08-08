@@ -19,7 +19,7 @@ export interface Props {
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
-const { title, description, path, og } = Astro.props;
+const { title, description, og } = Astro.props;
 
 const image = og.image ?? new URL('/images/og-image.jpg', Astro.url);
 ---
