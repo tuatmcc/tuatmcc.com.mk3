@@ -3,18 +3,18 @@ import "../styles/global.css";
 import BaseHead from "../components/BaseHead.astro";
 
 export interface Props {
-  title: string;
-  description?: string;
-  path: string;
-  pagefind: boolean;
-  og: {
-    enabled: boolean;
-    image?: URL;
-    width?: number;
-    height?: number;
-    type?: "article" | "website";
-  }
-};
+	title: string;
+	description?: string;
+	path: string;
+	pagefind: boolean;
+	og: {
+		enabled: boolean;
+		image?: URL;
+		width?: number;
+		height?: number;
+		type?: "article" | "website";
+	};
+}
 
 // const site = Astro.site ?? "";
 ---

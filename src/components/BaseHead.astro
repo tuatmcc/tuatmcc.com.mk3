@@ -1,27 +1,27 @@
 ---
 // Import the global.css file here so that it is included on
 // all pages through the use of the <BaseHead /> component.
-import '../styles/global.css';
+import "../styles/global.css";
 
 export interface Props {
-  title: string;
-  description?: string;
-  path: string;
-  pagefind: boolean;
-  og: {
-    enabled: boolean;
-    image?: URL;
-    width?: number;
-    height?: number;
-    type?: "article" | "website";
-  }
-};
+	title: string;
+	description?: string;
+	path: string;
+	pagefind: boolean;
+	og: {
+		enabled: boolean;
+		image?: URL;
+		width?: number;
+		height?: number;
+		type?: "article" | "website";
+	};
+}
 
 const canonicalURL = new URL(Astro.url.pathname, Astro.site);
 
 const { title, description, og } = Astro.props;
 
-const image = og.image ?? new URL('/images/og-image.jpg', Astro.url);
+const image = og.image ?? new URL("/images/og-image.jpg", Astro.url);
 ---
 
 <!-- Global Metadata -->
