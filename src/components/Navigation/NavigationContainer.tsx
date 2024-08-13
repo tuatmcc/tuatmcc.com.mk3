@@ -65,7 +65,7 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 							fill="currentColor"
 						/>
 					</svg>
-					<div className="relative flex flex-col bg-gray-500 p-2">
+					<div className="relative flex flex-col bg-gray-500 p-2 overflow-y-hidden">
 						<div className="bottom-0 right-0 absolute h-full">
 							<img
 								src="/logo/logo-vertical.svg"
@@ -73,45 +73,46 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 								className="opacity-40 py-4 pt-16 h-full"
 							/>
 						</div>
-						<div className="relative w-full flex justify-end items-center">
-							<button
-								type="button"
-								aria-label="Menu Button"
-								onClick={() => setActive((prev) => !prev)}
+
+						<button
+							type="button"
+							className="fixed z-10 top-0 right-0 p-2"
+							aria-label="Menu Button"
+							onClick={() => setActive((prev) => !prev)}
+						>
+							<svg
+								className=""
+								width="40"
+								height="40"
+								viewBox="0 0 24 24"
+								fill="none"
+								xmlns="http://www.w3.org/2000/svg"
 							>
-								<svg
-									className=""
-									width="40"
-									height="40"
-									viewBox="0 0 24 24"
-									fill="none"
-									xmlns="http://www.w3.org/2000/svg"
-								>
-									<title>Menu</title>
-									<path
-										d="M4 6L20 6"
-										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										className="horizon1"
-									/>
-									<path
-										d="M4 12L20 12"
-										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										className="horizon2"
-									/>
-									<path
-										d="M4 18L20 18"
-										stroke="white"
-										stroke-width="2"
-										stroke-linecap="round"
-										className="horizon3"
-									/>
-								</svg>
-							</button>
-						</div>
+								<title>Menu</title>
+								<path
+									d="M4 6L20 6"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									className="horizon1"
+								/>
+								<path
+									d="M4 12L20 12"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									className="horizon2"
+								/>
+								<path
+									d="M4 18L20 18"
+									stroke="white"
+									stroke-width="2"
+									stroke-linecap="round"
+									className="horizon3"
+								/>
+							</svg>
+						</button>
+
 						{children}
 					</div>
 				</nav>
