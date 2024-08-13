@@ -1,0 +1,49 @@
+---
+import { NavigationContainer } from "./NavigationContainer.tsx";
+
+const links = [
+	{ href: "/", label: "Home" },
+	{ href: "/about", label: "About" },
+	{ href: "/achievements", label: "Achievements" },
+	{ href: "/blog", label: "Blog" },
+];
+---
+
+<NavigationContainer client:only="react">
+  <div class="w-full p-8 pt-24">
+    <ul class="flex flex-col gap-8">
+      {links.map((link) => (
+      <li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider p-2">
+        <a href={link.href} class=" flex w-full">{link.label}</a>
+      </li>
+      ))} 
+    </ul>
+  </div>
+</NavigationContainer>
+
+<style>
+
+.link-item {
+  &::after {
+    position: absolute;
+    content: "";
+    display: block;
+    bottom: 0;
+    left: 50%;
+    width: 0;
+    bottom: 0;
+    height: 2px;
+    background: white;
+    transition: all 0.2s;
+    transform: translateX(-50%);
+    opacity: 0;
+  }
+
+  &:hover {
+    &::after {
+      width: 100%;
+      opacity: 1;
+    }
+  }
+}
+</style>

@@ -8,5 +8,10 @@ export default {
 			orbitron: ["Orbitron", "sans-serif"],
 		},
 	},
-	plugins: [],
+	plugins: [
+		({ addVariant }) => {
+			addVariant("child", "& > *");
+			addVariant("child-hover", "& > *:hover");
+		},
+	],
 };
