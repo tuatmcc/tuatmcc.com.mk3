@@ -1,9 +1,12 @@
 ---
-import Navigation from "../components/Navigation/Navigation";
+import Navigation from "../components/Navigation/Navigation.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="MCC" path="" og={{enabled: true}} pagefind={false}>
-  <Navigation client:only="react" />
+  <Navigation />
+  <button>Click me</button>
   <slot />
 </Layout>
+<style>
+</style>
