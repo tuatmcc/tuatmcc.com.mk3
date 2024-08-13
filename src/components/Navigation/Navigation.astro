@@ -10,11 +10,11 @@ const links = [
 ---
 
 <NavigationContainer client:only="react">
-  <div class="w-full p-8 pt-24">
+  <div class="w-full pl-8 pt-24">
     <ul class="flex flex-col gap-8">
       {links.map((link) => (
-      <li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider p-2">
-        <a href={link.href} class=" flex w-full">{link.label}</a>
+      <li class="link-item relative flex overflow-hidden text-white text-2xl font-orbitron tracking-wider">
+        <a href={link.href} class=" flex w-full p-2">{link.label}</a>
       </li>
       ))} 
     </ul>
