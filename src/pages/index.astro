@@ -1,8 +1,11 @@
 ---
 import Navigation from "../components/Navigation/Navigation.astro";
+import { ModelCanvas } from "../components/home/ModelCanvas";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="MCC" path="" og={{enabled: true}} pagefind={false}>
-  <Navigation />
+<Navigation>
+    <ModelCanvas client:only="react" />
+  </Navigation>
 </Layout>

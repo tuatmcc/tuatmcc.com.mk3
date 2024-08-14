@@ -31,21 +31,18 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon1"
 						/>
 						<path
 							d="M4 12L20 12"
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon2"
 						/>
 						<path
 							d="M4 18L20 18"
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon3"
 						/>
 					</svg>
 				</button>
@@ -81,7 +78,6 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 							onClick={() => setActive((prev) => !prev)}
 						>
 							<svg
-								className=""
 								width="40"
 								height="40"
 								viewBox="0 0 24 24"
@@ -94,21 +90,18 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon1"
 								/>
 								<path
 									d="M4 12L20 12"
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon2"
 								/>
 								<path
 									d="M4 18L20 18"
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon3"
 								/>
 							</svg>
 						</button>
