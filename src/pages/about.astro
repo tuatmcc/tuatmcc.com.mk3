@@ -1,6 +1,7 @@
 ---
 import Navigation from "../components/Navigation/Navigation.astro";
 import Layout from "../layouts/Layout.astro";
+import { ModelCanvas } from "../components/home/ModelCanvas";
 ---
 
 <Layout
@@ -17,6 +18,6 @@ import Layout from "../layouts/Layout.astro";
   }}
 >
   <Navigation>
-  <h1>hello</h1>
+    <ModelCanvas client:only="react" />
   </Navigation>
 </Layout>

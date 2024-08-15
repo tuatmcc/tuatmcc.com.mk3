@@ -1,8 +1,17 @@
 ---
 import Navigation from "../components/Navigation/Navigation.astro";
+// import { ModelCanvas } from "../components/home/ModelCanvas";
 import Layout from "../layouts/Layout.astro";
+import Simple from "../components/home/Simple.astro";
+import Typing from "../components/home/Typing.astro";
+import { ModelCanvas } from "../components/home/ModelCanvas";
 ---
 
 <Layout title="MCC" path="" og={{enabled: true}} pagefind={false}>
-  <Navigation />
+  <Navigation>
+    <div class="absolute top-0 left-0 w-full h-full bg-black opacity-20">
+      <ModelCanvas client:only="react" />
+    </div>
+    <Typing />
+  </Navigation>
 </Layout>

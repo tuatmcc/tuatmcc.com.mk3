@@ -5,8 +5,8 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 	return (
 		<>
 			<div
-				className="fixed top-0 left-0 w-full h-full bg-blue-100 bg-opacity-50 z-[-10] transition-opacity"
-				style={{ opacity: active ? 1 : 0 }}
+				className="fixed top-0 left-0 w-full h-full"
+				style={{ opacity: active ? 1 : 0, display: active ? "block" : "none" }}
 				onClick={() => setActive(false)}
 				onKeyDown={(e) => e.key === "Escape" && setActive(false)}
 			/>
@@ -31,21 +31,18 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon1"
 						/>
 						<path
 							d="M4 12L20 12"
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon2"
 						/>
 						<path
 							d="M4 18L20 18"
 							stroke="black"
 							stroke-width="2"
 							stroke-linecap="round"
-							className="horizon3"
 						/>
 					</svg>
 				</button>
@@ -81,7 +78,6 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 							onClick={() => setActive((prev) => !prev)}
 						>
 							<svg
-								className=""
 								width="40"
 								height="40"
 								viewBox="0 0 24 24"
@@ -94,21 +90,18 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon1"
 								/>
 								<path
 									d="M4 12L20 12"
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon2"
 								/>
 								<path
 									d="M4 18L20 18"
 									stroke="white"
 									stroke-width="2"
 									stroke-linecap="round"
-									className="horizon3"
 								/>
 							</svg>
 						</button>
