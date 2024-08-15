@@ -1,0 +1,66 @@
+---
+
+---
+
+<div class="w-screen h-screen relative">
+  <div class="flex justify-center items-center h-full">
+    <div class="flex items-center text-4xl font-mono tracking-wider">
+      <div class="typing__text">Hello, World!</div>
+      <div class="typing__text">Welcome to MCC!</div>
+      <div class="typing__cursor h-8 bg-black w-4"></div>
+    </div>
+  </div>
+</div>
+
+<style>
+.typing__cursor {
+  animation: blink 1s infinite, fadeOut 1s ease-in-out 2s;
+}
+
+@keyframes blink {
+  0%, 100% {
+    opacity: 1;
+  }
+  50% {
+    opacity: 0;
+  }
+}
+
+.typing__text {
+  --typ-dur: 1s;
+  overflow: hidden;
+  white-space: nowrap;
+  width: 0;
+
+  &:first-of-type {
+    animation: typing var(--typ-dur) steps(12) forwards, fadeOut 1s ease-in-out var(--typ-dur) forwards;
+  }
+
+  &:nth-of-type(2) {
+    animation: typing 1s steps(12) 2s forwards;
+  }
+}
+
+@keyframes typing {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+@keyframes fadeOut {
+  0% {
+    opacity: 1;
+  }
+  90% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    display: none;
+  }
+}
+
+</style>

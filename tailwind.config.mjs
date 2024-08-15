@@ -6,12 +6,9 @@ export default {
 		fontFamily: {
 			sans: ["Hiragino Kaku Gothic ProN", "sans-serif"],
 			orbitron: ["Orbitron", "sans-serif"],
+      mono: ["JetBrains Mono", "monospace"]
 		},
 	},
 	plugins: [
-		({ addVariant }) => {
-			addVariant("child", "& > *");
-			addVariant("child-hover", "& > *:hover");
-		},
 	],
 };

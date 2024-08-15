@@ -5,8 +5,8 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 	return (
 		<>
 			<div
-				className="fixed top-0 left-0 w-full h-full bg-blue-100 bg-opacity-50 z-[-10] transition-opacity"
-				style={{ opacity: active ? 1 : 0 }}
+				className="fixed top-0 left-0 w-full h-full"
+				style={{ opacity: active ? 1 : 0, display: active ? "block" : "none" }}
 				onClick={() => setActive(false)}
 				onKeyDown={(e) => e.key === "Escape" && setActive(false)}
 			/>
