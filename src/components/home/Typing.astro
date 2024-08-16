@@ -1,10 +1,9 @@
 ---
-
 ---
 
-<div class="w-screen h-screen relative">
+<div class="w-full h-screen relative">
   <div class="flex justify-center items-center h-full">
-    <div class="flex items-center text-4xl font-mono tracking-wider">
+    <div class="flex items-center text-4xl font-orbitron font-bold tracking-wider">
       <div class="typing__text">Hello, World!</div>
       <div class="typing__text">Welcome to MCC!</div>
       <div class="typing__cursor h-8 bg-black w-4"></div>
@@ -27,17 +26,17 @@
 }
 
 .typing__text {
-  --typ-dur: 1s;
+  --typ-dur: 2s;
   overflow: hidden;
   white-space: nowrap;
   width: 0;
 
   &:first-of-type {
-    animation: typing var(--typ-dur) steps(12) forwards, fadeOut 1s ease-in-out var(--typ-dur) forwards;
+    animation: type-delete var(--typ-dur) steps(12) forwards;
   }
 
   &:nth-of-type(2) {
-    animation: typing 1s steps(12) 2s forwards;
+    animation: typing 1s steps(12) var(--typ-dur) forwards;
   }
 }
 
@@ -50,15 +49,17 @@
   }
 }
 
-@keyframes fadeOut {
+@keyframes type-delete {
   0% {
-    opacity: 1;
+    width: 0;
   }
-  90% {
-    opacity: 1;
+  50% {
+    width: 100%;
+  }
+  80% {
+    width: 100%;
   }
   100% {
-    opacity: 0;
     display: none;
   }
 }
