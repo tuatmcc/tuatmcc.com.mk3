@@ -6,9 +6,9 @@ export default {
 		fontFamily: {
 			sans: ["Hiragino Kaku Gothic ProN", "sans-serif"],
 			orbitron: ["Orbitron", "sans-serif"],
-      mono: ["JetBrains Mono", "monospace"]
+			tektur: ["Tektur", "sans-serif"],
+			mono: ["JetBrains Mono", "monospace"],
 		},
 	},
-	plugins: [
-	],
+	plugins: [],
 };

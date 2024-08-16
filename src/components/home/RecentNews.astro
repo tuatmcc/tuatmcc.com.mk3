@@ -1,0 +1,25 @@
+---
+import { getCollection } from "astro:content";
+import Card from "../Card.astro";
+
+const posts = (await getCollection("news")).sort(
+	(a, b) => a.data.date.valueOf() - b.data.date.valueOf(),
+);
+---
+
+<section>
+  <h2>Recent News</h2>
+  <ul>
+    <li class="flex">
+      <Card class="bg-blue-400 p-8">
+        <a href="/news/1" class="flex">News 1</a>
+      </Card>
+    </li>
+    <li>
+      <a href="/news/2">News 2</a>
+    </li>
+    <li>
+      <a href="/news/3">News 3</a>
+    </li>
+  </ul>
+</section>
