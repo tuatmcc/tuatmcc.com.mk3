@@ -1,13 +1,14 @@
 ---
 import Navigation from "../components/Navigation/Navigation.astro";
 import RecentNews from "../components/home/RecentNews.astro";
-import Typing from "../components/home/Typing.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="MCC" path="" og={{enabled: true}} pagefind={false}>
   <Navigation>
-    <Typing />
+    <div class="h-svh flex flex-col items-center justify-center">
+      <img src="/animated_mcc.webp" class="w-[512px] lg:max-w-1/2 sm:max-w-10/12" />
+    </div>
     <RecentNews />
   </Navigation>
 </Layout>
