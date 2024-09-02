@@ -12,7 +12,13 @@ const { title, description, date, lastmod, image } = Astro.props;
 
 <html lang="en">
 	<head>
-    <BaseHead title={title} description={description} path='' pagefind={true} og={{enabled: true}} />
+		<BaseHead
+			title={title}
+			description={description}
+			path=""
+			pagefind={true}
+			og={{ enabled: true }}
+		/>
 		<style>
 			/* main { */
 			/* 	width: calc(100% - 2em); */
@@ -59,7 +65,17 @@ const { title, description, date, lastmod, image } = Astro.props;
 		<main class="w-full m-0">
 			<article>
 				<div class="w-full">
-					{image && <img width={1020} height={510} src={image} alt="" class="block mx-auto rounded-2xl shadow-red-950" />}
+					{
+						image && (
+							<img
+								width={1020}
+								height={510}
+								src={image}
+								alt=""
+								class="block mx-auto rounded-2xl shadow-red-950"
+							/>
+						)
+					}
 				</div>
 				<div class="w-720 mx-auto p-1 max-w-full text-gray-800">
 					<div class="title">
