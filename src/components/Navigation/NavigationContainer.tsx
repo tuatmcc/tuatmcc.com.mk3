@@ -46,9 +46,7 @@ export const NavigationContainer = ({ children }: { children: ReactNode }) => {
 						/>
 					</svg>
 				</button>
-				<nav
-					className={`fixed pl-16 grid top-0 bottom-0 right-0 w-[500px] max-w-[90vw] transition-transform ${active ? "translate-x-0" : "translate-x-full"}`}
-				>
+				<nav className="fixed pl-16 grid top-0 bottom-0 right-0 w-[500px] max-w-[90vw] transition-transform">
 					<svg
 						className="text-gray-500 absolute top-0 left-0 z-[-1]"
 						height="100%"

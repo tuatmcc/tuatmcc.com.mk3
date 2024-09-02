@@ -7,20 +7,20 @@ const { class: className, ...props } = Astro.props;
 ---
 
 <div class:list={[className, "card"]}>
-  <slot />
+	<slot />
 </div>
 <style>
-.card {
-  clip-path: polygon(
-    20px 0, 
-    calc(100% - 20px) 0, 
-    100% 20px, 
-    100% calc(100% - 20px), 
-    calc(100% - 20px) 100%, 
-    20px 100%, 
-    0 calc(100% - 20px), 
-    0 20px
-    );
-  margin-left: 20px;
-}
+	.card {
+		clip-path: polygon(
+			20px 0,
+			calc(100% - 20px) 0,
+			100% 20px,
+			100% calc(100% - 20px),
+			calc(100% - 20px) 100%,
+			20px 100%,
+			0 calc(100% - 20px),
+			0 20px
+		);
+		margin-left: 20px;
+	}
 </style>
