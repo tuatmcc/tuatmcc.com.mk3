@@ -1,0 +1,11 @@
+/dist
+/.astro
+/public
+/assets
+/content
+
+*.nix
+/.github
+
+/.vscode
+/.direnv
