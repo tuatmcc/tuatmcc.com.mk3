@@ -5,11 +5,13 @@ import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="MCC" path="" og={{ enabled: true }} pagefind={false}>
+  <!-- <img src="/abstract-wave.jpg" class="absolute top-0 left-0 w-full h-full bg-black" /> -->
 	<Navigation>
-		<div class="h-svh flex flex-col items-center justify-center">
+		<div class="h-svh flex flex-col items-center justify-center relative">
 			<img
 				src="/animated_mcc.webp"
-				class="w-[512px] lg:max-w-1/2 sm:max-w-10/12"
+				alt="MCC Logo"
+				class="w-80 h-80"
 			/>
 		</div>
 		<RecentNews />
