@@ -1,5 +1,6 @@
 ---
 import { NavigationContainer } from "./NavigationContainer.tsx";
+import { FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 
 const links = [
 	{ href: "/", label: "Home" },
@@ -11,19 +12,38 @@ const links = [
 
 <slot />
 <NavigationContainer client:only="react">
-	<div class="w-full pl-8 pt-24 overflow-y-auto">
+	<div class="w-full h-full pl-8 pt-24 overflow-y-auto flex flex-col justify-between">
 		<ul class="flex flex-col gap-8">
 			{
 				links.map((link) => (
 					<li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider">
-						<a href={link.href} class=" flex w-full p-2">
+						<a href={link.href} class=" flex justify-end w-full p-2">
 							{link.label}
 						</a>
 					</li>
 				))
 			}
 		</ul>
-	</div>
+    <div class="relative">
+      <div class="absolute top-0 right-0 w-[2px] bottom-0 bg-red-600" />
+    <ul class="relative flex flex-col gap-8 p-4">
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+          <FaXTwitter className="text-white w-6 h-6" />
+        </a>
+      </li>
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+            <FaGithub className="text-white w-6 h-6" />
+        </a>
+      </li>
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+            <FaDiscord className="text-white w-6 h-6" />
+        </a>
+      </li>
+    </ul>
+    </div>
 </NavigationContainer>
 
 <style>
