@@ -1,5 +1,6 @@
 ---
 import { NavigationContainer } from "./NavigationContainer.tsx";
+import { FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 
 const links = [
 	{ href: "/", label: "Home" },
@@ -11,99 +12,62 @@ const links = [
 
 <slot />
 <NavigationContainer client:only="react">
-	<nav
-		class="fixed pl-16 grid top-0 bottom-0 right-0 w-[500px] max-w-[90vw] transition-transform"
-	>
-		<svg
-			class="text-gray-500 absolute top-0 left-0 z-[-1]"
-			height="100%"
-			viewBox="0 0 160 80"
-			fill="none"
-			xmlns="http://www.w3.org/2000/svg"
-		>
-			<title>Deco</title>
-			<polygon
-				points="0 0 0 10 5 15 5 65 0 70 0 80 160 80 160 0"
-				fill="currentColor"></polygon>
-		</svg>
-		<div class="relative flex flex-col bg-gray-500 p-2 overflow-y-hidden">
-			<div class="bottom-0 right-0 absolute h-full">
-				<img
-					src="/logo/logo-vertical.svg"
-					alt="Logo"
-					class="opacity-40 py-4 pt-16 h-full"
-				/>
-			</div>
-
-			<button
-				type="button"
-				class="fixed z-10 top-0 right-0 p-2"
-				aria-label="Menu Button"
-			>
-				<svg
-					width="40"
-					height="40"
-					viewBox="0 0 24 24"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<title>Menu</title>
-					<path
-						d="M4 6L20 6"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"></path>
-					<path
-						d="M4 12L20 12"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"></path>
-					<path
-						d="M4 18L20 18"
-						stroke="white"
-						stroke-width="2"
-						stroke-linecap="round"></path>
-				</svg>
-			</button>
-			<div class="w-full pl-8 pt-24 overflow-y-auto">
-				<ul class="flex flex-col gap-8">
-					{
-						links.map((link) => (
-							<li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider">
-								<a href={link.href} class=" flex w-full p-2">
-									{link.label}
-								</a>
-							</li>
-						))
-					}
-				</ul>
-			</div>
-		</div>
-
-		<style>
-			.link-item {
-				&::after {
-					position: absolute;
-					content: "";
-					display: block;
-					bottom: 0;
-					left: 50%;
-					width: 0;
-					bottom: 0;
-					height: 2px;
-					background: white;
-					transition: all 0.2s;
-					transform: translateX(-50%);
-					opacity: 0;
-				}
-
-				&:hover {
-					&::after {
-						width: 100%;
-						opacity: 1;
-					}
-				}
+	<div class="w-full h-full pl-8 pt-24 overflow-y-auto flex flex-col justify-between">
+		<ul class="flex flex-col gap-8">
+			{
+				links.map((link) => (
+					<li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider">
+						<a href={link.href} class=" flex justify-end w-full p-2">
+							{link.label}
+						</a>
+					</li>
+				))
 			}
-		</style>
-	</nav></NavigationContainer
->
+		</ul>
+    <div class="relative">
+      <div class="absolute top-0 right-0 w-[2px] bottom-0 bg-red-600" />
+    <ul class="relative flex flex-col gap-8 p-4">
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+          <FaXTwitter className="text-white w-6 h-6" />
+        </a>
+      </li>
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+            <FaGithub className="text-white w-6 h-6" />
+        </a>
+      </li>
+      <li class="flex">
+        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
+            <FaDiscord className="text-white w-6 h-6" />
+        </a>
+      </li>
+    </ul>
+    </div>
+</NavigationContainer>
+
+<style>
+	.link-item {
+		&::after {
+			position: absolute;
+			content: "";
+			display: block;
+			bottom: 0;
+			left: 50%;
+			width: 0;
+			bottom: 0;
+			height: 2px;
+			background: white;
+			transition: all 0.2s;
+			transform: translateX(-50%);
+			opacity: 0;
+		}
+
+		&:hover {
+			&::after {
+				width: 100%;
+				opacity: 1;
+			}
+		}
+	}
+</style>
