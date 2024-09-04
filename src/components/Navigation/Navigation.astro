@@ -1,6 +1,6 @@
 ---
+import { FaDiscord, FaGithub, FaXTwitter } from "react-icons/fa6";
 import { NavigationContainer } from "./NavigationContainer.tsx";
-import { FaXTwitter, FaGithub, FaDiscord } from "react-icons/fa6";
 
 const links = [
 	{ href: "/", label: "Home" },
@@ -8,15 +8,23 @@ const links = [
 	{ href: "/achievements", label: "Achievements" },
 	{ href: "/blog", label: "Blog" },
 ];
+
+const socialLinks = [
+	{ href: "https://x.com/tuatmcc", icon: FaXTwitter },
+	{ href: "https://x.com/tuatmcc", icon: FaGithub },
+	{ href: "https://x.com/tuatmcc", icon: FaDiscord },
+];
 ---
 
 <slot />
 <NavigationContainer client:only="react">
-	<div class="w-full h-full pl-8 pt-24 overflow-y-auto flex flex-col justify-between">
+	<div
+		class="w-full h-full pl-8 pt-24 overflow-y-auto flex flex-col justify-between"
+	>
 		<ul class="flex flex-col gap-8">
 			{
 				links.map((link) => (
-					<li class="link-item relative flex text-white text-2xl font-orbitron tracking-wider">
+					<li class="link-item relative flex text-gray-100 text-2xl font-orbitron tracking-wider">
 						<a href={link.href} class=" flex justify-end w-full p-2">
 							{link.label}
 						</a>
@@ -24,50 +32,49 @@ const links = [
 				))
 			}
 		</ul>
-    <div class="relative">
-      <div class="absolute top-0 right-0 w-[2px] bottom-0 bg-red-600" />
-    <ul class="relative flex flex-col gap-8 p-4">
-      <li class="flex">
-        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
-          <FaXTwitter className="text-white w-6 h-6" />
-        </a>
-      </li>
-      <li class="flex">
-        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
-            <FaGithub className="text-white w-6 h-6" />
-        </a>
-      </li>
-      <li class="flex">
-        <a href="https://x.com/tuatmcc" target="_blank" rel="noopener noreferrer" class="flex flex-1 justify-end">
-            <FaDiscord className="text-white w-6 h-6" />
-        </a>
-      </li>
-    </ul>
-    </div>
-</NavigationContainer>
+		<div class="relative">
+			<div class="absolute top-0 right-0 w-[4px] bottom-0 bg-blue-600"></div>
+			<ul class="relative flex flex-col gap-8 p-4">
+				{
+					socialLinks.map((socialLink) => (
+						<li class="flex">
+							<a
+								href={socialLink.href}
+								target="_blank"
+								rel="noopener noreferrer"
+								class="flex flex-1 justify-end"
+							>
+								<socialLink.icon className="text-gray-200 w-6 h-6" />
+							</a>
+						</li>
+					))
+				}
+			</ul>
+		</div>
+	</div>
 
-<style>
-	.link-item {
-		&::after {
-			position: absolute;
-			content: "";
-			display: block;
-			bottom: 0;
-			left: 50%;
-			width: 0;
-			bottom: 0;
-			height: 2px;
-			background: white;
-			transition: all 0.2s;
-			transform: translateX(-50%);
-			opacity: 0;
-		}
-
-		&:hover {
+	<style>
+		.link-item {
 			&::after {
-				width: 100%;
-				opacity: 1;
+				position: absolute;
+				content: "";
+				display: block;
+				bottom: 0;
+				right: 0;
+				width: 0;
+				bottom: 0;
+				height: 2px;
+				background: white;
+				transition: all 0.2s;
+				opacity: 0;
+			}
+
+			&:hover {
+				&::after {
+					width: 100%;
+					opacity: 1;
+				}
 			}
 		}
-	}
-</style>
+	</style>
+</NavigationContainer>
