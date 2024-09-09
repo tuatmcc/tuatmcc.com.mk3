@@ -1,0 +1,54 @@
+---
+import { Image } from "astro:assets";
+import { FadeOut } from "./FadeOut";
+---
+
+<div
+	class="sticky top-0 h-svh w-full flex flex-col items-center justify-center z-[-1]"
+>
+	<FadeOut client:only="react" className="flex flex-col items-center">
+		<Image
+			width="320"
+			height="320"
+			src="/animated_mcc.webp"
+			alt="MCC Logo"
+			class="w-80 h-80"
+			loading="lazy"
+		/>
+		<h1 class="fadeIn text-6xl font-bold font-orbitron tracking-wider mb-2">
+			MCC
+		</h1>
+		<div class="fixed bottom-0 p-4">
+			<svg
+				width="120"
+				height="120"
+				viewBox="0 0 400 400"
+				fill="none"
+				xmlns="http://www.w3.org/2000/svg"
+				class="animate-bounce"
+			>
+				<path d="M200 397L400 250V253L200 400L0 253V250L200 397Z" fill="black"
+				></path>
+				<path d="M199 0H201V300H199V0Z" fill="black"></path>
+			</svg>
+		</div>
+	</FadeOut>
+</div>
+
+<style>
+	.fadeIn {
+		animation: fadeIn 3s ease-in-out forwards;
+	}
+
+	@keyframes fadeIn {
+		from {
+			opacity: 0;
+		}
+		50% {
+			opacity: 0;
+		}
+		to {
+			opacity: 1;
+		}
+	}
+</style>
