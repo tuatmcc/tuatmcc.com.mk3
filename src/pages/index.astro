@@ -1,37 +1,23 @@
 ---
-import Container from "../components/Container.astro";
 import Navigation from "../components/Navigation/Navigation.astro";
-import RecentNews from "../components/home/RecentNews.astro";
+import Introduction from "../components/home/Introduction.astro";
+import { Progress } from "../components/home/Progress";
+import Top from "../components/home/Top.astro";
 import Layout from "../layouts/Layout.astro";
 ---
 
 <Layout title="MCC" path="" og={{ enabled: true }} pagefind={false}>
 	<Navigation>
-    <main class="main">
-      <!-- <div class="background-gradient fixed top-0 left-0 w-full h-full z-[-1]" /> -->
-      <div class="background-pattern fixed top-0 left-0 w-full h-full opacity-10 z-[-1]" />
-      <div class="sticky h-svh flex flex-col items-center justify-center top-0 z-[-1]">
-        <img src="/animated_mcc.webp" alt="MCC Logo" class="w-80 h-80" />
-      </div>
-      <Container>
-        <h1 class="text-4xl text-white tracking-wider font-orbitron text-center">Welcome to MCC</h1>
-      </Container>
+		<main class="relative">
+			<Top />
+			<Introduction />
+			<div class="flex flex-col items-center justify-center h-svh">
+				<h1 class="text-4xl font-bold text-center">MCC</h1>
+				<p class="text-center">
+					The official website of the Model Christian College, Dimapur
+				</p>
+			</div>
+			<Progress client:only="react" />
+		</main>
 	</Navigation>
-    </main>
 </Layout>
-
-<style>
-	.background-pattern {
-		background-image: url("/assets/triangle.svg");
-		background-repeat: repeat;
-		background-size: 100px;
-		background-position: center;
-	}
-
-	.background-gradient {
-		background-image: linear-gradient(#fff, transparent, #ccc9, #ccc);
-		background-size: 100%;
-		background-repeat: no-repeat;
-		background-position: center;
-	}
-</style>
